@@ -1,0 +1,21 @@
+<div class="form-container" id="toolbar">
+    <header [@fallIn]="state">
+      <button (click)="logout()" class="basic-btn">Logout</button>
+    </header>
+    <div id="page" [@moveInLeft]="state">
+      <h2>Hey {{ name.auth.displayName }}!</h2>
+    </div>
+
+    <div id="page" *ngFor="let provider of providerData">
+      <h3>Provider : {{provider.providerId}}</h3>
+      <h3>Display Name : {{provider.displayName}}</h3>
+      <h3>Email : {{provider.email}}</h3>
+      <h3>UID : {{provider.uid}}</h3>
+      <img src="{{provider.photoURL}}" />
+    </div>
+
+    <div>
+       <button (click)="linkGoogle()" id="google">Link With Google</button>
+    </div>
+    
+</div>
